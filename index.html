@@ -15,7 +15,9 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/tablet.css">
+    <link rel="stylesheet" href="./css/desktop.css">
   </head>
   <body>
     <!-- <шапка> -->
@@ -49,6 +51,12 @@
             </li>
           </ul>
         </address>
+
+        <button type="button" class="mobile-menu-btn js-open-menu">
+          <svg class="mobile-menu-btn-icon" width="24" height="24">
+            <use href="./images/icons.svg#mobile-menu-btn-icon"></use>
+          </svg>
+        </button>
       </div>
     </header>
     <main>
@@ -123,7 +131,11 @@
           <h2 class="section-title">Our Team</h2>
           <ul class="team-ul">
             <li class="team-li">
-              <img src="./images/img1.jpg" width="264" alt="Mark Guerrero" />
+              <img 
+              srcset="
+              ./images/Mark-Guerrero-mobile.jpg,
+              ./images/Mark-Guerrero-laptop.jpg"
+              src="./images/img1.jpg" width="264" alt="Mark Guerrero" loading="lazy">
               <div class="team-box">
                 <h3 class="item-title">Mark Guerrero</h3>
                 <p class="item-description">Product Designer</p>
@@ -160,7 +172,12 @@
               </div>
             </li>
             <li class="team-li">
-              <img src="./images/img2.jpg" width="264" alt="Tom Ford" />
+              <img 
+               srcset="
+               ./images/Tom-Ford-mobile.jpg,
+               ./images/Tom-Ford-laptop"
+              
+              src="./images/img2.jpg" width="264" alt="Tom Ford" loading="lazy">
               <div class="team-box">
                 <h3 class="item-title">Tom Ford</h3>
                 <p class="item-description">Frontend Developer</p>
@@ -197,7 +214,12 @@
               </div>
             </li>
             <li class="team-li">
-              <img src="./images/img3.jpg" width="264" alt="Camila Garcia" />
+              <img 
+              srcset="
+              ./images/Camila-Garcia-mobile.jpg,
+              ./images/Camila-Garcia-laptop.jpg
+              "
+              src="./images/img3.jpg" width="264" alt="Camila Garcia" loading="lazy">
               <div class="team-box">
                 <h3 class="item-title">Camila Garcia</h3>
                 <p class="item-description">Marketing</p>
@@ -234,7 +256,11 @@
               </div>
             </li>
             <li class="team-li">
-              <img src="./images/img4.jpg" width="264" alt="Daniel Wilson" />
+              <img
+              srcset="
+              ./images/Daniel-Wilson-mobile.jpg,
+              ./images/Daniel-Wilson-laptop.jpg"
+              src="./images/img4.jpg" width="264" alt="Daniel Wilson" />
               <div class="team-box">
                 <h3 class="item-title">Daniel Wilson</h3>
                 <p class="item-description">UI Designer</p>
@@ -280,12 +306,37 @@
           <ul class="portfolio-ul">
             <li class="portfolio-li">
               <div class="portfolio-img">
+                <picture>
+                  <!-- Desktop -->
+                  <source
+                    media="(min-width: 1158px)"
+                    srcset="
+                      ./images/portfolio1_desk@1x.jpg 1x,
+                      ./images/portfolio/portfolio1_desk@2x.jpg 2x
+                    ">
+
+                  <!-- Tablet -->
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      ./images/portfolio/portfolio1_tab@1x.jpg 1x,
+                      ./images/portfolio/portfolio1_tab@2x.jpg 2x
+                    ">
+
+                  <!-- Mobile -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="
+                      ./images/portfolio/portfolio1_mob@1x.jpg 1x,
+                      ./images/portfolio/portfolio1_mob@2x.jpg 2x
+                    ">
                 <img
                   src="./images/our_portfolio_banking_app1.jpg"
                   width="360"
                   height="300"
                   alt="portfolio1"
-                />
+                  loading="lazy">
+                </picture>
                 <p class="tex-description">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
